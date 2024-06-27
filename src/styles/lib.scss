@@ -15,7 +15,6 @@ $max-w-3xl	: 768px;
 $max-w-4xl	: 896px;
 $max-w-5xl	: 1024px;
 $max-w-6xl	: 1152px;
-
 // Media Query
 @mixin custom-media-query($device-type, $width) {
 	@if $device-type == "mobile" {
