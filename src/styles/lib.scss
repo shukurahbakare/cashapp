@@ -1,4 +1,7 @@
 // Convert px to rem
+
+$primary: #D91E23;
+
 $base-font-size: 16px;
 @function px-to-rem($px, $suffix: 1rem) {
 	@return calc(($px / $base-font-size) * $suffix);

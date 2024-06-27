@@ -2,6 +2,8 @@
 @use "./font.scss" as *;
 @use "./lib.scss" as *;
 
+$primary: #D91E23;
+
 :root {
 	//-- Colors
 	--active-blue-100: #ebf8fe;
