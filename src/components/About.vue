@@ -1,6 +1,4 @@
 <script setup>
-
-
 import QR from './modules/hero/QR.vue'
 import Exchange from './modules/hero/Exchange.vue'
 </script>
@@ -9,18 +7,25 @@ import Exchange from './modules/hero/Exchange.vue'
 
   <section class="about">
     <div class="about_container">
-      <h1>About Us</h1>
+      
       <section class="about_container_modules">
-         <div>
-           <p>
-          BnB Transfer Corp is a division of Cauridor, a multi-national fintech company headquartered in Canada. BnB provides international money transfer and payment services to individuals in multiple countries around the world with a focus on sending and receiving money transfers to, from and within Africa. 
-         </p>
-         <button>
-          <RouterLink to="/"> Read More</RouterLink>
-         
-         </button>
-         </div>
-        
+        <div><h1>About Us</h1>
+          <p>
+            BnB Transfer Corp is a division of Cauridor, a multi-national fintech company headquartered in Canada. BnB
+            provides international money transfer and payment services to individuals in multiple countries around the
+            world with a focus on sending and receiving money transfers to, from and within Africa.
+          </p>
+          <button>
+            <RouterLink to="/"> Read More</RouterLink>
+
+          </button>
+        </div>
+
+        <div>
+          <img src="../components/assets/mock1.png" alt="mobile phone">
+          <img src="../components/assets/mock2.png" alt="mobile phone">
+        </div>
+
       </section>
 
     </div>
@@ -37,7 +42,8 @@ import Exchange from './modules/hero/Exchange.vue'
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 4rem;
+  padding: 4rem 0;
+
 
   &_container {
     max-width: $max-w-6xl;
@@ -90,10 +96,10 @@ import Exchange from './modules/hero/Exchange.vue'
           p {
             color: var(--Neutral-Darkest, #2A2A2A);
 
-font-size: 20px;
-font-weight: 400;
-line-height: 30px;
-letter-spacing: -0.2px;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: -0.2px;
           }
 
           button {
@@ -104,7 +110,7 @@ letter-spacing: -0.2px;
             font-size: 20px;
             font-weight: 500;
             line-height: 30px;
-        
+
             a {
               color: #fff;
               text-decoration: none;
@@ -116,13 +122,46 @@ letter-spacing: -0.2px;
           }
         }
 
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
         &:last-child {
+          display: flex;
           grid-column: span 2 / span 2;
-
+          position: relative;
+          animation: fadeIn 0.5s ease-in-out forwards;
+        
+          img {
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        
+            &:first-child {
+              animation-delay: 0.1s;
+              bottom: 3rem;
+              left: 5rem;
+            }
+        
+            &:last-child {
+              animation-delay: 0.2s;
+              top: 5rem;
+              left: -2rem;
+            }
+          }
+        
           @include custom-media-query("mobile", $max-w-md) {
             grid-column: span 1 / span 1;
           }
         }
+        
       }
     }
   }
