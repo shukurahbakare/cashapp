@@ -1,6 +1,8 @@
 // Convert px to rem
 
 $primary: #D91E23;
+$primary-text: #2A2A2A; 
+$primary-gradient: linear-gradient(180deg, #D7E1EF 0%, #F8E5E8 100%);
 
 $base-font-size: 16px;
 @function px-to-rem($px, $suffix: 1rem) {

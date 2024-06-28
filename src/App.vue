@@ -34,17 +34,13 @@ import HelloWorld from './components/HelloWorld.vue'
 @use "./styles/index.scss" as *;
 
 header {
-
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
-  a {
-    text-decoration: none;
-
-  }
-
   .container {
+    max-width: $max-w-5xl;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,6 +54,16 @@ header {
     gap: 2rem;
     font-size: 1.2rem;
 
+    @include custom-media-query("mobile", $max-w-md) {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+
+    }
+
     a.router-link-exact-active {
       color: $primary;
     }
@@ -65,9 +71,17 @@ header {
 
   button {
     padding: 0.5rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 3rem;
     background-color: $primary;
     border: 2px solid $primary;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }
 </style>
