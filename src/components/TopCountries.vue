@@ -29,7 +29,23 @@ export default {
         {
           icon: "IconShield",
           name: "Kenia",
-        }
+        },
+        {
+          icon: "IconEasy",
+          name: "Cameroon",
+        },
+        {
+          icon: "IconSupport",
+          name: "Côte d'Ivoire",
+        },
+        {
+          icon: "IconRocket",
+          name: "Ghana",
+        },
+        {
+          icon: "IconShield",
+          name: "Kenia",
+        },
       ]
     };
   }
@@ -79,14 +95,20 @@ export default {
       overflow: hidden;
 
       &_card {
-        opacity: 0; // Initially hidden
-        transform: translateY(20px); // Initially positioned lower
-        animation: fadeInUp 0.6s ease forwards; // Animation properties
+        border: 2px solid #d6d6d6; 
+        border-radius: 0.5rem;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        opacity: 0; 
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
 
         p {
           color: #5F5F65;
-          font-size: 16px;
-          font-weight: 400;
+          font-size: 24px;
+          font-weight: 700;
           line-height: 24px;
         }
       }
