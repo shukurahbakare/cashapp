@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
@@ -25,7 +24,7 @@ import { RouterLink, RouterView } from 'vue-router'
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   background-color: white;
   overflow: hidden;
 

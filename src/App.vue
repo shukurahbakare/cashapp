@@ -39,7 +39,7 @@ header {
   align-items: center;
 
   .container {
-    max-width: $max-w-5xl;
+    max-width: $max-w-6xl;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@ header {
     gap: 2rem;
     font-size: 1.2rem;
 
-    @include custom-media-query("mobile", $max-w-md) {
+    @include custom-media-query("mobile", $max-w-lg) {
       display: none;
     }
 

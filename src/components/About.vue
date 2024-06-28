@@ -7,12 +7,20 @@ import Exchange from './modules/hero/Exchange.vue'
 
 <template>
 
-  <section class="hero">
-    <div class="hero_container">
-      <h1>Sending Made Easy</h1>
-      <section class="hero_container_modules">
-        <QR />
-        <Exchange />
+  <section class="about">
+    <div class="about_container">
+      <h1>About Us</h1>
+      <section class="about_container_modules">
+         <div>
+           <p>
+          BnB Transfer Corp is a division of Cauridor, a multi-national fintech company headquartered in Canada. BnB provides international money transfer and payment services to individuals in multiple countries around the world with a focus on sending and receiving money transfers to, from and within Africa. 
+         </p>
+         <button>
+          <RouterLink to="/"> Read More</RouterLink>
+         
+         </button>
+         </div>
+        
       </section>
 
     </div>
@@ -23,17 +31,13 @@ import Exchange from './modules/hero/Exchange.vue'
 <style lang="scss" scoped>
 @use "../styles/index.scss" as *;
 
-.hero {
+.about {
   margin-top: -1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 3rem;
-  background-color: $primary;
-  background: $primary-gradient;
   padding-bottom: 4rem;
-
 
   &_container {
     max-width: $max-w-6xl;
@@ -49,7 +53,7 @@ import Exchange from './modules/hero/Exchange.vue'
 
     h1 {
       position: relative;
-      font-size: clamp(1rem, -0.3323rem + 5.988vw, 3.5rem);
+      font-size: clamp(1rem, -0.3323rem + 5.988vw, 2.5rem);
       z-index: 1;
       background-color: transparent;
 
@@ -58,9 +62,9 @@ import Exchange from './modules/hero/Exchange.vue'
         width: 100%;
         height: 20px;
         position: absolute;
-        top: 3.75rem;
+        top: 3rem;
         left: 0;
-        background-image: url("./icons/Subtract.png");
+        background-image: url("./icons/SubtractY.png");
         background-repeat: no-repeat;
         background-size: contain;
         z-index: -1;
@@ -71,17 +75,41 @@ import Exchange from './modules/hero/Exchange.vue'
       max-width: $max-w-6xl;
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 2rem;
 
       @include custom-media-query("mobile", $max-w-md) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      aside {
+      div {
 
         &:first-child {
-          grid-column: span 3 / span 3;
+          grid-column: span 2 / span 2;
+
+          p {
+            color: var(--Neutral-Darkest, #2A2A2A);
+
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: -0.2px;
+          }
+
+          button {
+            padding: 0.5rem 1.5rem;
+            border-radius: 3rem;
+            background-color: $primary;
+            border: 2px solid $primary;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+        
+            a {
+              color: #fff;
+              text-decoration: none;
+            }
+          }
 
           @include custom-media-query("mobile", $max-w-md) {
             grid-column: span 1 / span 1;
