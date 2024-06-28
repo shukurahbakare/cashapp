@@ -6,81 +6,82 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <header>
     <div class="container">
-      <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
+      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
       <div class="wrapper">
         <!-- <HelloWorld msg="You did it!" /> -->
 
         <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/">For Businesses</RouterLink>
+          <RouterLink to="/partners">Payout Partners</RouterLink>
+          <RouterLink to="/about">About Us</RouterLink>
+          <RouterLink to="/careers">Careers</RouterLink>
+          <RouterLink to="/help">Help</RouterLink>
         </nav>
       </div>
+
+      <button>
+        <RouterLink to="/login">Download App</RouterLink>
+      </button>
     </div>
+
   </header>
+
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use "./styles/index.scss" as *;
+
 header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+  .container {
+    max-width: $max-w-5xl;
+    width: 100%;
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
   }
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+    @include custom-media-query("mobile", $max-w-md) {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+
+    }
+
+    a.router-link-exact-active {
+      color: $primary;
+    }
+  }
+
+  button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    background-color: $primary;
+    border: 2px solid $primary;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }
 </style>
