@@ -5,23 +5,26 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <div class="container">
+      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
+      <div class="wrapper">
+        <!-- <HelloWorld msg="You did it!" /> -->
 
-      <nav>
-        <RouterLink to="/">For Businesses</RouterLink>
-        <RouterLink to="/partners">Payout Partners</RouterLink>
-        <RouterLink to="/about">About Us</RouterLink>
-        <RouterLink to="/careers">Careers</RouterLink>
-        <RouterLink to="/help">Help</RouterLink>
-      </nav>
+        <nav>
+          <RouterLink to="/">For Businesses</RouterLink>
+          <RouterLink to="/partners">Payout Partners</RouterLink>
+          <RouterLink to="/about">About Us</RouterLink>
+          <RouterLink to="/careers">Careers</RouterLink>
+          <RouterLink to="/help">Help</RouterLink>
+        </nav>
+      </div>
+
+      <button>
+        <RouterLink to="/login">Download App</RouterLink>
+      </button>
     </div>
 
-    <button>
-      <RouterLink to="/login">Download App</RouterLink>
-    </button>
   </header>
 
   <RouterView />
@@ -31,17 +34,28 @@ import HelloWorld from './components/HelloWorld.vue'
 @use "./styles/index.scss" as *;
 
 header {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid red;
+
+  a {
+    text-decoration: none;
+
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   nav {
     width: 100%;
     font-size: 12px;
     text-align: center;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     font-size: 1.2rem;
 
     a.router-link-exact-active {
@@ -50,6 +64,8 @@ header {
   }
 
   button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
     background-color: $primary;
     border: 2px solid $primary;
   }
